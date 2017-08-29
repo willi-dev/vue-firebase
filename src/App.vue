@@ -2,6 +2,9 @@
   <div id="app" class="container">
     <!-- <img src="./assets/logo.png"> -->
     <!-- <hello></hello> -->
+
+    <headerComponent></headerComponent>
+
     <div class="row">
       <div class="col-md-12">
         <div class="page-header">
@@ -57,13 +60,18 @@
         </div>
       </div>
     </div>
+  
+    <footerComponent></footerComponent>
+
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello';
+// import Hello from './components/Hello';
 import Firebase from '../node_modules/firebase';
 import toastr from '../node_modules/toastr';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const config = {
   apiKey: 'AIzaSyAJyqVYNXHQVIQcVo9p8WkL-nBMdP5KZ6w',
@@ -95,20 +103,21 @@ export default {
   },
 
   methods: {
-    addBook: function addBook() {
+    addBook() {
       booksRef.push(this.newBook);
       this.newBook.title = '';
       this.newBook.author = '';
       this.newBook.url = 'http://';
     },
-    removeBook: function removeBook(book) {
+    removeBook(book) {
       booksRef.child(book['.key']).remove();
       toastr.success('Book removed successfully');
     },
   },
 
   components: {
-    Hello,
+    headerComponent: Header,
+    footerComponent: Footer,
   },
 };
 
