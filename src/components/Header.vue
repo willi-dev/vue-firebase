@@ -1,6 +1,12 @@
 <template>
 	<header>
-		<h2>Ini Header</h2>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					ini header
+				</div>
+			</div>
+		</div>
 	</header>
 </template>
 
