@@ -2,53 +2,58 @@
   <div id="app" class="container">
     <!-- <img src="./assets/logo.png"> -->
     <!-- <hello></hello> -->
-    <div class="col-md-12">
-      <div class="page-header">
-        <h1>Learn Vue.js 2 & Firebase <small>from CodingTheSmartWay.com</small></h1>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Add New Books</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header">
+          <h1>Learn Vue.js 2 & Firebase <small>from CodingTheSmartWay.com</small></h1>
         </div>
-        <div class="panel-body">
-          <form id="form" class="form-inline" v-on:submit.prevent="addBook">
-            <div class="form-group">
-              <label for="bookTitle">Title</label>
-              <input type="text" id="bookTitle" class="form-control" v-model="newBook.title">
-            </div>
-            <div class="form-group">
-              <label for="bookAuthor">Author:</label>
-              <input type="text" id="bookAuthor" class="form-control" v-model="newBook.author">
-            </div>
-            <div class="form-group">
-              <label for="bookUrl">Url:</label>
-              <input type="text" id="bookUrl" class="form-control" v-model="newBook.url">
-            </div>
-            <input type="submit" value="Add Book" class="btn btn-primary">
-          </form>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Add New Books</h3>
+          </div>
+          <div class="panel-body">
+            <form id="form" class="form-inline" v-on:submit.prevent="addBook">
+              <div class="form-group">
+                <label for="bookTitle">Title</label>
+                <input type="text" id="bookTitle" class="form-control" v-model="newBook.title">
+              </div>
+              <div class="form-group">
+                <label for="bookAuthor">Author:</label>
+                <input type="text" id="bookAuthor" class="form-control" v-model="newBook.author">
+              </div>
+              <div class="form-group">
+                <label for="bookUrl">Url:</label>
+                <input type="text" id="bookUrl" class="form-control" v-model="newBook.url">
+              </div>
+              <input type="submit" value="Add Book" class="btn btn-primary">
+            </form>
+          </div>
         </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Book List</h3>
-        </div>
-        <div class="panel-body">
-          <tabel class="table table-striped">
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="book in books">
-                <td><a v-bind:href="book.url">{{book.title}}</a></td>
-                <td>{{book.author}}</td>
-                <td><span class="glyphicon glyphicon-trash" aria-hidden="true" v-on:click="removeBook(book)"></span></td>
-              </tr>
-            </tbody>
-          </tabel>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Book List</h3>
+          </div>
+          <div class="panel-body">
+            <tabel class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="book in books">
+                  <td><a v-bind:href="book.url">{{book.title}}</a></td>
+                  <td>{{book.author}}</td>
+                  <td>
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true" v-on:click=""></span>
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true" v-on:click="removeBook(book)"></span>
+                  </td>
+                </tr>
+              </tbody>
+            </tabel>
+          </div>
         </div>
       </div>
     </div>
